@@ -62,3 +62,30 @@ nm['192.168.1.9']['tcp'][135]
 
 
 ![](5.png)
+
+
+
+import nmap
+
+host= '192.168.1.8'
+
+nm = nmap.PortScanner()
+
+for port in range(8080,8086):
+
+    result = nm.scan(host,str(port))
+    state = result['scan']['192.168.1.8']['tcp'][int(port)]['state']
+    print('[%s] port state: %s' %(port,state))
+
+
+![](11.jpg)
+
+![](6.png)
+
+上图说明 关于手机名称和状态信息。
+
+![](7.png)
+
+![](9.png)
+
+
